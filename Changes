@@ -1,5 +1,14 @@
 Revision history for Perl module Set::Bag
 
+
+1.013 2013-04-12
+  - Added release tests to the distribution (author-only).
+  - Brought module up to compliance with modern release tests.
+  - Perl-critic has nothing to criticize about (level 5).
+#  - Eliminated undefined behavior when calling 'elements' in scalar context:
+#    now we explicitly check, and return a tally of bag items.
+  - Documented all methods explicitly (WIP).
+
 1.012 2013-04-10
   - Clarified the LICENSE section in POD (GPL and Artistic, same as Perl itself)
 

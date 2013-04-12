@@ -1,8 +1,8 @@
+use strict;
+
 use Test::More tests => 47;
 
 BEGIN { use_ok( 'Set::Bag'); }
-
-use strict;
 
 my $bag_n = Set::Bag->new;
 my $bag_a = Set::Bag->new(apples => 3, oranges => 4);

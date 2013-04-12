@@ -1,5 +1,9 @@
+
 package Set::Bag;
 
+use strict;
+
+use vars qw( $VERSION );
 $VERSION = 1.012;
 
 =pod
@@ -110,6 +114,42 @@ does not exist in the bag is grabbed for,
 the number of instances returned for that element will be C<undef>.
 If used without parameters the elements are returned in pseudorandom order.
 
+=head1 METHODS
+
+=head2 new
+
+=head2 bag
+
+=head2 complement
+
+=head2 copy
+
+=head2 delete
+
+=head2 difference
+
+=head2 elements
+
+=head2 eq
+
+=head2 grab
+
+=head2 insert
+
+=head2 intersection
+
+=head2 maximize
+
+=head2 minimize
+
+=head2 ne
+
+=head2 over_delete
+
+=head2 sum
+
+=head2 union
+
 =head1 NOTES
 
 Beware the low precedence of C<|> and C<&> compared with C<eq> and C<ne>.
@@ -163,7 +203,9 @@ sub new {
 
 sub elements {
     my $bag = shift;
-    return sort grep { $_ ne $over_delete } keys %{$bag};
+    return sort grep { $_ ne $over_delete } keys %{$bag}; ## no critic (sort)
+    # We need to fix this, but still trying to decide if this is the fix.
+#    return wantarray ? sort grep { $_ ne $over_delete } keys %{$bag} : keys %{$bag};
 }
 
 sub bag {
